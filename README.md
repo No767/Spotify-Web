@@ -1,2 +1,3 @@
 # Spotify-Web
-spotify-web thing
+
+Small Spotify playlist app for Girls Who Code 2022
