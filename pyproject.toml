@@ -12,6 +12,8 @@ blinker = "^1.5"
 python-dotenv = "^0.21.0"
 watchdog = "^2.1.9"
 Django = "^4.1.1"
+Flask-Session = "^0.4.0"
+spotipy = "^2.20.0"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^2.20.0"
