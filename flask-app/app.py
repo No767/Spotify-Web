@@ -38,4 +38,4 @@ def index():
     return f'<h2>Hi {spotify.me()["display_name"]}'
 
 if __name__ == '__main__':
-    app.run(threaded=True, port=int(os.environ.get("PORT", os.environ.get("SPOTIPY_REDIRECT_URI", 8080).split(":")[-1])))
+    app.run(threaded=True, port=8080)
