@@ -1,8 +1,8 @@
 import os
-from flask import Flask, session, request, redirect
+from flask import Flask, session, request, redirect, render_template
 from flask_session import Session
 import spotipy
-from spotipy.cache_handler import MemoryCacheHandler, CacheFileHandler
+from spotipy.cache_handler import CacheFileHandler
 from dotenv import load_dotenv
 
 app = Flask(__name__)
@@ -35,7 +35,7 @@ def index():
 
     # Step 3. Signed in, display data
     spotify = spotipy.Spotify(auth_manager=auth_manager)
-    return f'<h2>Hi {spotify.me()["display_name"]}'
+    return render_template('index.html', username=spotify.me()["display_name"], userPFP=[item["url"] for item in spotify.me()["images"]][0])
 
 if __name__ == '__main__':
     app.run(threaded=True, port=8080)
